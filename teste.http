@@ -1,0 +1,36 @@
+###
+GET http://localhost:3000/status HTTP/1.1
+
+###
+GET http://localhost:3000/images HTTP/1.1
+
+###
+GET http://localhost:3000/images/2 HTTP/1.1
+
+###
+POST http://localhost:3000/images HTTP/1.1
+content-type: application/json
+
+{
+    "id":2,
+    "path": "teste"
+}
+
+###
+DELETE http://localhost:3000/images/8 HTTP/1.1
+
+
+###
+POST http://localhost:3000/api/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text";
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="teste.png"
+Content-Type: image/png
+
+< ./image 1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
