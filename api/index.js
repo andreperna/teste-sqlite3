@@ -48,7 +48,6 @@ const deleteImage = async (tableName, id)=>{
 
 // express //////////////////////////////////////////////////
 import express from "express"
-const PORT = 3000 | process.PORT
 const app = express()
 
 import multer from "multer";
@@ -84,6 +83,6 @@ app.post("/api/upload", upload.single("image"), async (req, res)=>{
     res.json({id: id_img, path: path_img})
 })
 
-// server listening
-app.listen(PORT, ()=>console.log(`Server Listening on PORT ${PORT}`))
+
+export default app
 
