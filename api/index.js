@@ -4,7 +4,7 @@ import { open } from "sqlite";
 
 // open db
 const db = await open({
-    filename: "./db.sqlite",
+    filename: "./api/db.sqlite",
     driver: sqlite3.Database
 })
 
@@ -67,7 +67,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage})
 
 // middlewares
-app.use(express.static("./public"))
+app.use(express.static("./api/public"))
 app.use(express.json())
 app.set("json spaces", 2)
 
